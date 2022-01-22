@@ -7,8 +7,9 @@ name = "pypi"
 jupyter = "*"
 pandas = "*"
 xgboost = "*"
-pycaret = "*"
 scikit-learn = "*"
+hyperopt = "*"
+nyoka = "*"
 
 [dev-packages]
 
