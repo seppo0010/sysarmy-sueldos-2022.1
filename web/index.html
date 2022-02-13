@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <style>
+  strong { display: block; margin-top: 18px; font-weight: normal; }
+  span { display: block; font-size: 12px; }
+  body { padding-bottom: 36px; }
+  .checkboxes label { display: block; }
+  .checkboxes input { margin-right: 10px; }
+  #prediction { position: fixed; top: 0; right: 0; background: #ccc; padding: 8px; }
+  </style>
+  <script src="tailwind-3.0.18.js"></script>
+  <script src="model.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold underline text-clifford">
+    Hola mundo!
+  </h1>
+  <div id="prediction"></div>
+  <div>
+    <label>
+      <strong>Dónde estás trabajando</strong>
+      <select class="form-select px-4 py-3" name="Dónde estás trabajando">
+        <option value=""></option>
+        <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+        <option value="GBA">GBA</option>
+        <option value="Provincia de Buenos Aires">Provincia de Buenos Aires</option>
+        <option value="Catamarca">Catamarca</option>
+        <option value="Chaco">Chaco</option>
+        <option value="Chubut">Chubut</option>
+        <option value="Córdoba">Córdoba</option>
+        <option value="Corrientes">Corrientes</option>
+        <option value="Entre Ríos">Entre Ríos</option>
+        <option value="Formosa">Formosa</option>
+        <option value="Jujuy">Jujuy</option>
+        <option value="La Pampa">La Pampa</option>
+        <option value="La Rioja">La Rioja</option>
+        <option value="Mendoza">Mendoza</option>
+        <option value="Misiones">Misiones</option>
+        <option value="Neuquén">Neuquén</option>
+        <option value="Río Negro">Río Negro</option>
+        <option value="Salta">Salta</option>
+        <option value="San Juan">San Juan</option>
+        <option value="San Luis">San Luis</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="Santiago del Estero">Santiago del Estero</option>
+        <option value="Tierra del Fuego">Tierra del Fuego</option>
+        <option value="Tucumán">Tucumán</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <strong>Años de experiencia</strong>
+      <span>Si tenés menos de un año de experiencia ingresá 0.</span>
+    <input type="number" class="border-2 form-input px-4 py-3" name="Años de experiencia" />
+    </label>
+  </div>
+  <div>
+    <label>
+      <strong>Años en la empresa actual</strong>
+      <span>Si tenés menos de un año en la empresa ingresá 0.</span>
+    </label>
+    <input type="number" class="border-2 form-input px-4 py-3" name="Años en la empresa actual" />
+  </div>
+  <div>
+    <label>
+      <strong>Años en el puesto actual</strong>
+      <span>Si tenés menos de un año en tu puesto ingresá 0.</span>
+    </label>
+    <input type="number" class="border-2 form-input px-4 py-3" name="Años en el puesto actual" />
+  </div>
+  <div>
+    <label>
+      <strong>¿Gente a cargo?</strong>
+      <span>Si no tenés ingresá 0.</span>
+    </label>
+    <input type="number" class="border-2 form-input px-4 py-3" name="¿Gente a cargo?" />
+  </div>
+  <div class="checkboxes">
+    <strong>Plataformas</strong>
+    <span>Sólo las que apliquen a tu puesto actual (no las que sepas y no utilices).</span>
+    <label><input type="checkbox" name="Plataformas_AIX" value="1" />AIX</label>
+    <label><input type="checkbox" name="Plataformas_Amazon Web Services" value="1" />Amazon Web Services</label>
+    <label><input type="checkbox" name="Plataformas_Arduino o similar" value="1" />Arduino o similar</label>
+    <label><input type="checkbox" name="Plataformas_Azure" value="1" />Azure</label>
+    <label><input type="checkbox" name="Plataformas_*BSD" value="1" />*BSD</label>
+    <label><input type="checkbox" name="Plataformas_Docker" value="1" />Docker</label>
+    <label><input type="checkbox" name="Plataformas_Firebase" value="1" />Firebase</label>
+    <label><input type="checkbox" name="Plataformas_Google Cloud Platform/App Engine" value="1" />Google Cloud Platform/App Engine</label>
+    <label><input type="checkbox" name="Plataformas_Heroku" value="1" />Heroku</label>
+    <label><input type="checkbox" name="Plataformas_HP-UX" value="1" />HP-UX</label>
+    <label><input type="checkbox" name="Plataformas_IBM Cloud / Watson" value="1" />IBM Cloud / Watson</label>
+    <label><input type="checkbox" name="Plataformas_Kubernetes" value="1" />Kubernetes</label>
+    <label><input type="checkbox" name="Plataformas_Linux" value="1" />Linux</label>
+    <label><input type="checkbox" name="Plataformas_Microcontroladores" value="1" />Microcontroladores</label>
+    <label><input type="checkbox" name="Plataformas_Mainframe" value="1" />Mainframe</label>
+    <label><input type="checkbox" name="Plataformas_OpenShift" value="1" />OpenShift</label>
+    <label><input type="checkbox" name="Plataformas_OpenStack" value="1" />OpenStack</label>
+    <label><input type="checkbox" name="Plataformas_SAP" value="1" />SAP</label>
+    <label><input type="checkbox" name="Plataformas_Solaris" value="1" />Solaris</label>
+    <label><input type="checkbox" name="Plataformas_Serverless" value="1" />Serverless</label>
+    <label><input type="checkbox" name="Plataformas_VMWare" value="1" />VMWare</label>
+    <label><input type="checkbox" name="Plataformas_Windows Server" value="1" />Windows Server</label>
+  </div>
+  <div class="checkboxes">
+    <strong>Lenguajes de programación o tecnologías.</strong>
+    <span>Sólo las que apliquen a tu puesto actual (no las que sepas y no utilices).</span>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._.NET" value="1" />.NET</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._ABAP" value="1" />ABAP</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Arduino" value="1" />Arduino</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Assembler" value="1" />Assembler</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Bash/Shell" value="1" />Bash/Shell</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._C" value="1" />C</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._C++" value="1" />C++</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._C#" value="1" />C#</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Clojure" value="1" />Clojure</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._COBOL" value="1" />COBOL</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._CSS" value="1" />CSS</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Dart" value="1" />Dart</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Delphi" value="1" />Delphi</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Go" value="1" />Go</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Groovy" value="1" />Groovy</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Elixir" value="1" />Elixir</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Erlang" value="1" />Erlang</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._HTML" value="1" />HTML</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Java" value="1" />Java</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Javascript" value="1" />Javascript</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Kotlin" value="1" />Kotlin</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Matlab" value="1" />Matlab</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Objective-C" value="1" />Objective-C</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Perl" value="1" />Perl</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._PHP" value="1" />PHP</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Python" value="1" />Python</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._R" value="1" />R</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Ruby" value="1" />Ruby</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Rust" value="1" />Rust</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Scala" value="1" />Scala</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Smalltalk" value="1" />Smalltalk</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._SQL" value="1" />SQL</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._Swift" value="1" />Swift</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._TypeScript" value="1" />TypeScript</label>
+    <label><input type="checkbox" name="Lenguajes de programación o tecnologías._VBA" value="1" />VBA</label>
+  </div>
+  <div class="checkboxes">
+    <strong>Frameworks, herramientas y librerías</strong>
+    <span>Sólo las que apliquen a tu puesto actual (no las que sepas y no utilices).</span>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_.NET Core" value="1" />.NET Core</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Akka" value="1" />Akka</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Angular" value="1" />Angular</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Bootstrap" value="1" />Bootstrap</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_CodeIgniter" value="1" />CodeIgniter</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Cordova" value="1" />Cordova</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Django" value="1" />Django</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Drupal" value="1" />Drupal</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Flask" value="1" />Flask</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Flutter" value="1" />Flutter</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Hadoop" value="1" />Hadoop</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Hibernate" value="1" />Hibernate</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_jQuery" value="1" />jQuery</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Laravel" value="1" />Laravel</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Node.js" value="1" />Node.js</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Rails" value="1" />Rails</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_React.js" value="1" />React.js</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_SwiftUI" value="1" />SwiftUI</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_SAP" value="1" />SAP</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Spark" value="1" />Spark</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Spring" value="1" />Spring</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Symfony" value="1" />Symfony</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_TensorFlow" value="1" />TensorFlow</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Torch" value="1" />Torch</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_Vue.js" value="1" />Vue.js</label>
+    <label><input type="checkbox" name="Frameworks, herramientas y librerías_WordPress" value="1" />WordPress</label>
+  </div>
+  <div class="checkboxes">
+    <strong>Bases de datos</strong>
+    <span>Sólo las que apliquen a tu puesto actual (no las que sepas y no utilices).</span>
+    <label><input type="checkbox" name="Bases de datos_Aerospike" value="1" />Aerospike</label>
+    <label><input type="checkbox" name="Bases de datos_Amazon DynamoDB" value="1" />Amazon DynamoDB</label>
+    <label><input type="checkbox" name="Bases de datos_Amazon Redshift" value="1" />Amazon Redshift</label>
+    <label><input type="checkbox" name="Bases de datos_Apache HBase" value="1" />Apache HBase</label>
+    <label><input type="checkbox" name="Bases de datos_Amazon RDS/Aurora" value="1" />Amazon RDS/Aurora</label>
+    <label><input type="checkbox" name="Bases de datos_Apache Hive" value="1" />Apache Hive</label>
+    <label><input type="checkbox" name="Bases de datos_Cassandra" value="1" />Cassandra</label>
+    <label><input type="checkbox" name="Bases de datos_ElasticSearch" value="1" />ElasticSearch</label>
+    <label><input type="checkbox" name="Bases de datos_Google Cloud Storage" value="1" />Google Cloud Storage</label>
+    <label><input type="checkbox" name="Bases de datos_HANA" value="1" />HANA</label>
+    <label><input type="checkbox" name="Bases de datos_IBM Db2" value="1" />IBM Db2</label>
+    <label><input type="checkbox" name="Bases de datos_AIX" value="1" />AIX</label>
+    <label><input type="checkbox" name="Bases de datos_AIX" value="1" />AIX</label>
+    <label><input type="checkbox" name="Bases de datos_AIX" value="1" />AIX</label>
+    <label><input type="checkbox" name="Bases de datos_Informix" value="1" />Informix</label>
+    <label><input type="checkbox" name="Bases de datos_MariaDB" value="1" />MariaDB</label>
+    <label><input type="checkbox" name="Bases de datos_Microsoft Azure (Tables, CosmosDB, SQL, etc)" value="1" />Microsoft Azure (Tables, CosmosDB, SQL, etc)</label>
+    <label><input type="checkbox" name="Bases de datos_MongoDB" value="1" />MongoDB</label>
+    <label><input type="checkbox" name="Bases de datos_MySQL" value="1" />MySQL</label>
+    <label><input type="checkbox" name="Bases de datos_Neo4j" value="1" />Neo4j</label>
+    <label><input type="checkbox" name="Bases de datos_Oracle" value="1" />Oracle</label>
+    <label><input type="checkbox" name="Bases de datos_Percona XtraBackup" value="1" />Percona XtraBackup</label>
+    <label><input type="checkbox" name="Bases de datos_Percona XtraDB Cluster" value="1" />Percona XtraDB Cluster</label>
+    <label><input type="checkbox" name="Bases de datos_Percona Server" value="1" />Percona Server</label>
+    <label><input type="checkbox" name="Bases de datos_PostgreSQL" value="1" />PostgreSQL</label>
+    <label><input type="checkbox" name="Bases de datos_ProxySQL" value="1" />ProxySQL</label>
+    <label><input type="checkbox" name="Bases de datos_Redis" value="1" />Redis</label>
+    <label><input type="checkbox" name="Bases de datos_SQLite" value="1" />SQLite</label>
+    <label><input type="checkbox" name="Bases de datos_Sybase" value="1" />Sybase</label>
+    <label><input type="checkbox" name="Bases de datos_Teradata" value="1" />Teradata</label>
+  </div>
+  <div class="checkboxes">
+    <strong>QA / Testing</strong>
+    <span>Sólo las que apliquen a tu puesto actual (no las que sepas y no utilices).</span>
+    <label><input type="checkbox" name="QA / Testing_Appium" value="1" />Appium</label>
+    <label><input type="checkbox" name="QA / Testing_Cucumber" value="1" />Cucumber</label>
+    <label><input type="checkbox" name="QA / Testing_Cypress" value="1" />Cypress</label>
+    <label><input type="checkbox" name="QA / Testing_HP LoadRunner" value="1" />HP LoadRunner</label>
+    <label><input type="checkbox" name="QA / Testing_HP UFT" value="1" />HP UFT</label>
+    <label><input type="checkbox" name="QA / Testing_Jest" value="1" />Jest</label>
+    <label><input type="checkbox" name="QA / Testing_JUnit" value="1" />JUnit</label>
+    <label><input type="checkbox" name="QA / Testing_Lippia" value="1" />Lippia</label>
+    <label><input type="checkbox" name="QA / Testing_Karma" value="1" />Karma</label>
+    <label><input type="checkbox" name="QA / Testing_Katalon" value="1" />Katalon</label>
+    <label><input type="checkbox" name="QA / Testing_Mocha" value="1" />Mocha</label>
+    <label><input type="checkbox" name="QA / Testing_NUnit" value="1" />NUnit</label>
+    <label><input type="checkbox" name="QA / Testing_OpenQA" value="1" />OpenQA</label>
+    <label><input type="checkbox" name="QA / Testing_PHPUnit" value="1" />PHPUnit</label>
+    <label><input type="checkbox" name="QA / Testing_Postman" value="1" />Postman</label>
+    <label><input type="checkbox" name="QA / Testing_Puppeteer" value="1" />Puppeteer</label>
+    <label><input type="checkbox" name="QA / Testing_Ranorex" value="1" />Ranorex</label>
+    <label><input type="checkbox" name="QA / Testing_RSpec" value="1" />RSpec</label>
+    <label><input type="checkbox" name="QA / Testing_Selenium" value="1" />Selenium</label>
+    <label><input type="checkbox" name="QA / Testing_Silktest" value="1" />Silktest</label>
+    <label><input type="checkbox" name="QA / Testing_SoapUI" value="1" />SoapUI</label>
+    <label><input type="checkbox" name="QA / Testing_Telerik Studio" value="1" />Telerik Studio</label>
+    <label><input type="checkbox" name="QA / Testing_Test Complete" value="1" />Test Complete</label>
+    <label><input type="checkbox" name="QA / Testing_TFS" value="1" />TFS</label>
+    <label><input type="checkbox" name="QA / Testing_Visual Studio Coded UI" value="1" />Visual Studio Coded UI</label>
+    <label><input type="checkbox" name="QA / Testing_Watir" value="1" />Watir</label>
+    <label><input type="checkbox" name="QA / Testing_Xunit" value="1" />Xunit</label>
+  </div>
+  <div class="checkboxes">
+    <strong>IDEs</strong>
+    <label><input type="checkbox" name="IDEs_Android Studio" value="1" />Android Studio</label>
+    <label><input type="checkbox" name="IDEs_Atom" value="1" />Atom</label>
+    <label><input type="checkbox" name="IDEs_Code" value="1" />Code</label>
+    <label><input type="checkbox" name="IDEs_Eclipse" value="1" />Eclipse</label>
+    <label><input type="checkbox" name="IDEs_Emacs" value="1" />Emacs</label>
+    <label><input type="checkbox" name="IDEs_IntelliJ" value="1" />IntelliJ</label>
+    <label><input type="checkbox" name="IDEs_IPython / Jupyter" value="1" />IPython / Jupyter</label>
+    <label><input type="checkbox" name="IDEs_Komodo" value="1" />Komodo</label>
+    <label><input type="checkbox" name="IDEs_Nano" value="1" />Nano</label>
+    <label><input type="checkbox" name="IDEs_NetBeans" value="1" />NetBeans</label>
+    <label><input type="checkbox" name="IDEs_Notepad++" value="1" />Notepad++</label>
+    <label><input type="checkbox" name="IDEs_PHPStorm" value="1" />PHPStorm</label>
+    <label><input type="checkbox" name="IDEs_PyCharm" value="1" />PyCharm</label>
+    <label><input type="checkbox" name="IDEs_RStudio" value="1" />RStudio</label>
+    <label><input type="checkbox" name="IDEs_Sublime Text" value="1" />Sublime Text</label>
+    <label><input type="checkbox" name="IDEs_TextMate" value="1" />TextMate</label>
+    <label><input type="checkbox" name="IDEs_Vi" value="1" />Vi</label>
+    <label><input type="checkbox" name="IDEs_Vim" value="1" />Vim</label>
+    <label><input type="checkbox" name="IDEs_Visual Studio" value="1" />Visual Studio</label>
+    <label><input type="checkbox" name="IDEs_Visual Studio Code" value="1" />Visual Studio Code</label>
+    <label><input type="checkbox" name="IDEs_WebStorm" value="1" />WebStorm</label>
+    <label><input type="checkbox" name="IDEs_Xcode" value="1" />Xcode</label>
+    <label><input type="checkbox" name="IDEs_Zend" value="1" />Zend</label>
+  </div>
+  <div>
+    <label>
+      <strong>Cantidad de personas en tu organización</strong>
+      <span>Aproximadamente, en la ciudad en la que trabajás. Si trabajás en el Estado sería la cantidad de personas en tu organismo/ministerio. Si trabajás en una cooperativa sería la cantidad de personas socias.</span>
+      <select class="form-select px-4 py-3" name="Cantidad de personas en tu organización">
+        <option value=""></option>
+        <option value="1 (solamente yo)">1 (solamente yo)</option>
+        <option value="2-10">2-10</option>
+        <option value="11-50">11-50</option>
+        <option value="51-100">51-100</option>
+        <option value="101-200">101-200</option>
+        <option value="201-500">201-500</option>
+        <option value="501-1000">501-1000</option>
+        <option value="1001-2000">1001-2000</option>
+        <option value="2001-5000">2001-5000</option>
+        <option value="5001-10000">5001-10000</option>
+        <option value="10001+">10001+</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>
+      <strong>Actividad principal</strong>
+      <select class="form-select px-4 py-3" name="Actividad principal">
+        <option value=""></option>
+        <option value="Producto basado en Software">Producto basado en Software</option>
+        <option value="Servicios / Consultoría de Software / Digital">Servicios / Consultoría de Software / Digital</option>
+        <option value="Otras industrias">Otras industrias</option>
+      </select>
+    </label>
+  </div>
+  <div class="checkboxes">
+    <strong>Beneficios extra</strong>
+    <label><input type="checkbox" name="Beneficios extra_Abono de celular" value="1" />Abono de celular</label>
+    <label><input type="checkbox" name="Beneficios extra_Abono de Internet" value="1" />Abono de Internet</label>
+    <label><input type="checkbox" name="Beneficios extra_Capacitaciones y/o cursos" value="1" />Capacitaciones y/o cursos</label>
+    <label><input type="checkbox" name="Beneficios extra_Descuento en gimnasios / Clases de gimnasia online" value="1" />Descuento en gimnasios / Clases de gimnasia online</label>
+    <label><input type="checkbox" name="Beneficios extra_Clases de idiomas" value="1" />Clases de idiomas</label>
+    <label><input type="checkbox" name="Beneficios extra_Comidas pagas / subvencionadas" value="1" />Comidas pagas / subvencionadas</label>
+    <label><input type="checkbox" name="Beneficios extra_Cuota para universidad / posgrados" value="1" />Cuota para universidad / posgrados</label>
+    <label><input type="checkbox" name="Beneficios extra_Descuentos varios (Mercado Pago, Clarín 365, Club La Nación, etc)" value="1" />Descuentos varios (Mercado Pago, Clarín 365, Club La Nación, etc)</label>
+    <label><input type="checkbox" name="Beneficios extra_Estacionamiento gratuito / subvencionado" value="1" />Estacionamiento gratuito / subvencionado</label>
+    <label><input type="checkbox" name="Beneficios extra_Horarios flexibles" value="1" />Horarios flexibles</label>
+    <label><input type="checkbox" name="Beneficios extra_Lactario en la oficina" value="1" />Lactario en la oficina</label>
+    <label><input type="checkbox" name="Beneficios extra_Licencia de paternidad / maternidad extendida" value="1" />Licencia de paternidad / maternidad extendida</label>
+    <label><input type="checkbox" name="Beneficios extra_Stock options / RSUs" value="1" />Stock options / RSUs</label>
+    <label><input type="checkbox" name="Beneficios extra_Sueldo divido en dos pagos por mes" value="1" />Sueldo divido en dos pagos por mes</label>
+    <label><input type="checkbox" name="Beneficios extra_Vacaciones flexibles (adicionales a las reglamentarias)" value="1" />Vacaciones flexibles (adicionales a las reglamentarias)</label>
+    <label><input type="checkbox" name="Beneficios extra_Viáticos" value="1" />Viáticos</label>
+  </div>
+</div>
+</body>
+</html>
